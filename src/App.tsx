@@ -1,7 +1,7 @@
 export default function App() {
   return (
-    <h1 className="text-xl font-bold underline">
-      Hello world!
-    </h1>
+    <p>
+      카파 47th 전시회 웹
+    </p>
   )
 }
