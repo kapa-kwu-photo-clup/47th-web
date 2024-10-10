@@ -5,6 +5,7 @@ interface NavItemProps {
   label: string;
   isActive: boolean;
   activeColor: string;
+  onClick?: () => void;
 }
 
 export default function NavItem({
@@ -12,9 +13,13 @@ export default function NavItem({
   label,
   isActive,
   activeColor,
+  onClick,
 }: NavItemProps) {
   return (
-    <div className={`lg:py-4 lg:px-0 py-8 px-5 ${isActive ? activeColor : ''}`}>
+    <div
+      className={`lg:py-4 lg:px-0 py-8 px-5 ${isActive ? activeColor : ''}`}
+      onClick={onClick}
+    >
       <Link to={to} className={` ${isActive ? 'font-bold' : ''}`}>
         {label}
       </Link>

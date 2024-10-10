@@ -35,6 +35,10 @@ export default function Header() {
     },
   ];
 
+  const handleNavItemClick = () => {
+    setShowMenu(false);
+  };
+
   return (
     <header className="w-full border-b-2 border-lightGray bg-white">
       <div className="lg:w-3/4 lg:px-0 px-5 mx-auto relative flex justify-between items-center">
@@ -80,6 +84,7 @@ export default function Header() {
               label={item.label}
               isActive={location.pathname === item.to}
               activeColor={item.color}
+              onClick={handleNavItemClick}
             />
           ))}
         </div>
