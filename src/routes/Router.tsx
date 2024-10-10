@@ -3,7 +3,7 @@ import Layout from '../layout';
 import MainPage from '../pages/MainPage/mainPage';
 import ComePage from '../pages/ComePage/comePage';
 import ExhibitionPage from '../pages/exhibitionPage/ExhibitionPage';
-import EventPage from '../layout/EventPage/eventPage';
+import EventPage from '../pages/EventPage/eventPage';
 
 export const router = createBrowserRouter([
   {

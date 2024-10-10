@@ -5,11 +5,11 @@ import Footer from './Footer/footer';
 
 export default function Layout() {
   return (
-    <div className=" text-black_22">
+    <div className=" text-black_22 text-base">
       <div className="sticky top-0 z-10">
         <Header />
       </div>
-      <div className="mx-auto min-h-screen py-2">
+      <div className="mx-auto min-h-screen">
         <Outlet />
       </div>
       <div className="">

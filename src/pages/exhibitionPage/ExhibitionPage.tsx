@@ -1,6 +1,6 @@
 export default function ExhibitionPage() {
   return (
-    <div>
+    <div className=" w-3/4 mx-auto">
       <p>exhibitionpage</p>
       <p>계절</p>
       <div className=" w-full flex flex-row">
