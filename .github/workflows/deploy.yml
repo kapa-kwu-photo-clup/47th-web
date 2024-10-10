@@ -23,7 +23,7 @@ jobs:
 
       - name: Add remote for fork
         run: |
-          git remote add fork https://${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel.git
+          git remote add fork https://${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel
 
       - name: Fetch and merge from original repo
         run: |
