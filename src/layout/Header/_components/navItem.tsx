@@ -14,8 +14,8 @@ export default function NavItem({
   activeColor,
 }: NavItemProps) {
   return (
-    <div className={`py-4 ${isActive ? activeColor : ''}`}>
-      <Link to={to} className={isActive ? 'font-bold' : ''}>
+    <div className={`lg:py-4 lg:px-0 py-8 px-5 ${isActive ? activeColor : ''}`}>
+      <Link to={to} className={` ${isActive ? 'font-bold' : ''}`}>
         {label}
       </Link>
     </div>

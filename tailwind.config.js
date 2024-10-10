@@ -2,7 +2,34 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeInDown: 'fadeInDown 0.7s ease-in-out',
+        growDown: 'growDown 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeInDown: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(-10px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        growDown: {
+          '0%': {
+            maxHeight: '0',
+            opacity: 0,
+          },
+          '100%': {
+            maxHeight: '500px', // 필요한 만큼 크게 설정
+            opacity: 1,
+          },
+        },
+      },
+    },
     colors: {
       white: '#ffffff',
       black_22: '#222222',
