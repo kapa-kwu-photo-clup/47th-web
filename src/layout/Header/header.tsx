@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <>
-      <header className="w-full bg-slate-300">
+      <header className="w-full bg-lightGray">
         <div className=" gap-4 flex flex-row">
           <a href="./">메인</a>
           <a href="./come">VISIT</a>

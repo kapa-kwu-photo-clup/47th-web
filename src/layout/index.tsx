@@ -5,7 +5,7 @@ import Footer from './Footer/footer';
 
 export default function Layout() {
   return (
-    <>
+    <div className=" text-black_22">
       <div className="sticky top-0 z-10">
         <Header />
       </div>
@@ -15,6 +15,6 @@ export default function Layout() {
       <div className="">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
