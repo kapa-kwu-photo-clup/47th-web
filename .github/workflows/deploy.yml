@@ -1,48 +1,36 @@
-name: Deploy
+name: Sync Fork
 
 on:
   push:
-    branches: ['dev']
+    branches: ['dev'] # 원본 저장소의 dev 브랜치에 푸시가 있을 때 실행
+  schedule:
+    - cron: '0 * * * *' # 매번실행 (선택사항)
 
 jobs:
-  build:
+  sync-fork:
     runs-on: ubuntu-latest
 
-    container: pandoc/latex
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install mustache (to update the date)
-
-        run: apk add ruby && gem install mustache
-
-      - name: creates output
-
-        run: sh ./build.sh
-
-      - name: Pushes to another repository
-
-        id: push_directory
-
-        uses: cpina/github-action-push-to-another-repository@dev
-
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.FORK_AUTO_TOKEN }}
-
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          source-directory: 'output'
+          fetch-depth: 0 # 모든 히스토리를 가져옵니다
 
-          destination-github-username: jamooooong
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
-          destination-repository-name: 47th-web-vercel
+      - name: Add remote for fork
+        run: |
+          git remote add fork https://${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel.git
 
-          user-email: ${{ secrets.EMAIL }}
+      - name: Fetch and merge from original repo
+        run: |
+          git fetch origin
+          git checkout dev
+          git merge origin/dev
 
-          commit-message: ${{ github.event.commits[0].message }}
-
-          target-branch: main
-
-      - name: Test get variable exported by push-to-another-repository
-
-        run: echo $DESTINATION_CLONED_DIRECTORY
+      - name: Push to fork
+        run: |
+          git push fork dev:main --force
