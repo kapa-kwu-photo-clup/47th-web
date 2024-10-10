@@ -19,7 +19,7 @@ jobs:
 
       - name: Add remote-url
         run: |
-          git remote add forked-repo https://jamooooong:${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-wev-vercel
+          git remote add forked-repo https://jamooooong:${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel
           git config user.name jamooooong
           git config user.email ${{ secrets.EMAIL }}
 
