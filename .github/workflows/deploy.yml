@@ -33,4 +33,4 @@ jobs:
 
       - name: Push to fork
         run: |
-          git push fork dev:main --force
+          git push fork dev:dev --force
