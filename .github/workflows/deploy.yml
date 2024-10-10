@@ -11,7 +11,7 @@ jobs:
     container: pandoc/latex
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install mustache (to update the date)
 
@@ -25,7 +25,7 @@ jobs:
 
         id: push_directory
 
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@dev
 
         env:
           API_TOKEN_GITHUB: ${{ secrets.FORK_AUTO_TOKEN }}
