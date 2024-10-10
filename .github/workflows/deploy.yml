@@ -4,7 +4,7 @@ on:
   push:
     branches: ['dev'] # 원본 저장소의 dev 브랜치에 푸시가 있을 때 실행
   schedule:
-    - cron: '0 * * * *' # 매번실행 (선택사항)
+    - cron: '0 * * * *' # 매번실행
 
 jobs:
   sync-fork:
