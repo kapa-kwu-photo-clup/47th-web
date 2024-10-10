@@ -1,36 +1,32 @@
-name: Sync Fork
-
+name: Synchronize to forked repo
 on:
   push:
-    branches: ['dev'] # 원본 저장소의 dev 브랜치에 푸시가 있을 때 실행
-  schedule:
-    - cron: '0 * * * *' # 매번실행
+    branches:
+      - dev
 
 jobs:
-  sync-fork:
+  sync:
+    name: Sync forked repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout main
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 모든 히스토리를 가져옵니다
+          token: ${{ secrets.FORK_AUTO_TOKEN }}
+          fetch-depth: 0
+          ref: dev
 
-      - name: Configure Git
+      - name: Add remote-url
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git remote add forked-repo https://jamooooong:${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-wev-vercel
+          git config user.name jamooooong
+          git config user.email ${{ secrets.EMAIL }}
 
-      - name: Add remote for fork
+      - name: Push changes to forked-repo
         run: |
-          git remote add fork https://${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel
+          git push -f forked-repo dev
 
-      - name: Fetch and merge from original repo
+      - name: Clean up
         run: |
-          git fetch origin
-          git checkout dev
-          git merge origin/dev
-
-      - name: Push to fork
-        run: |
-          git push fork dev:dev --force
+          git remote remove forked-repo
