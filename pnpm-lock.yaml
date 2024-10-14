@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@vercel/analytics':
+        specifier: ^1.3.1
+        version: 1.3.1(react@18.3.1)
+      '@vercel/speed-insights':
+        specifier: ^1.0.12
+        version: 1.0.12(react@18.3.1)
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -566,6 +572,40 @@ packages:
   '@typescript-eslint/visitor-keys@8.8.1':
     resolution: {integrity: sha512-0/TdC3aeRAsW7MDvYRwEc1Uwm0TIBfzjPFgg60UU2Haj5qsCs9cc3zNgY71edqE3LbWfF/WoZQd3lJoDXFQpag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@vercel/analytics@1.3.1':
+    resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
+    peerDependencies:
+      next: '>= 13'
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
+
+  '@vercel/speed-insights@1.0.12':
+    resolution: {integrity: sha512-ZGQ+a7bcfWJD2VYEp2R1LHvRAMyyaFBYytZXsfnbOMkeOvzGNVxUL7aVUvisIrTZjXTSsxG45DKX7yiw6nq2Jw==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19
+      svelte: ^4
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vitejs/plugin-react@4.3.2':
     resolution: {integrity: sha512-hieu+o05v4glEBucTcKMK3dlES0OeJlD9YVOAPraVMOInBCwzumaIFiUjr4bHK7NPgnAHgiskUoceKercrN8vg==}
@@ -1264,6 +1304,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
   shallow-equal@3.1.0:
     resolution: {integrity: sha512-pfVOw8QZIXpMbhBWvzBISicvToTiM5WBF1EeAUZDDSb5Dt29yl4AYbyywbJFSEsRUMr7gJaxqCdr4L3tQf9wVg==}
 
@@ -1905,6 +1948,16 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.8.1
       eslint-visitor-keys: 3.4.3
+
+  '@vercel/analytics@1.3.1(react@18.3.1)':
+    dependencies:
+      server-only: 0.0.1
+    optionalDependencies:
+      react: 18.3.1
+
+  '@vercel/speed-insights@1.0.12(react@18.3.1)':
+    optionalDependencies:
+      react: 18.3.1
 
   '@vitejs/plugin-react@4.3.2(vite@5.4.8)':
     dependencies:
@@ -2582,6 +2635,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.6.3: {}
+
+  server-only@0.0.1: {}
 
   shallow-equal@3.1.0: {}
 
