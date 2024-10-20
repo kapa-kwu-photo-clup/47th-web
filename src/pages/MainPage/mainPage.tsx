@@ -2,8 +2,11 @@ import { useMediaQuery } from 'react-responsive';
 import Lottie, { Options } from 'react-lottie';
 import mainWebAnimation from '../../assets/images/lottie/47th-main-web.json';
 import mainMobileAnimation from '../../assets/images/lottie/47th-main-mobile.json';
+import { useScrollToTop } from '../../hooks/useScrollToTop';
 
 export default function MainPage() {
+  useScrollToTop();
+
   const isLargeScreen = useMediaQuery({ minWidth: 1024 });
 
   const defaultOptions: Options = {

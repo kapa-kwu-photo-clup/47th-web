@@ -39,13 +39,6 @@ export default function Header() {
     setShowMenu(false);
   };
 
-  const isActiveRoute = (path: string) => {
-    if (path === '/') {
-      return location.pathname === path;
-    }
-    return location.pathname.startsWith(path);
-  };
-
   return (
     <header className="w-full border-b-2 border-lightGray bg-white">
       <div className="lg:w-3/4 lg:px-0 px-5 mx-auto relative flex justify-between items-center">
@@ -56,7 +49,15 @@ export default function Header() {
               key={item.to}
               to={item.to}
               label={item.label}
-              isActive={isActiveRoute(item.to)}
+              isActive={
+                location.pathname === item.to ||
+                (location.pathname === '/exhibition/summer' &&
+                  item.to === '/exhibition/spring') ||
+                (location.pathname === '/exhibition/fall' &&
+                  item.to === '/exhibition/spring') ||
+                (location.pathname === '/exhibition/winter' &&
+                  item.to === '/exhibition/spring')
+              }
               activeColor={item.color}
             />
           ))}

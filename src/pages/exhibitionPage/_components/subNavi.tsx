@@ -10,12 +10,12 @@ export default function SubNavi() {
         </p>
       </div>
 
-      <nav className="w-full border-b-2 border-lightGray text-gray_bd flex flex-row gap-12 justify-center text-xl font-base">
+      <nav className="w-full border-b-4 border-lightGray text-gray_bd flex flex-row gap-12 justify-center text-xl font-base">
         <NavLink
           to="/exhibition/spring"
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-springPink border-b-2 border-springPink py-4'
+              ? 'font-bold text-springPink border-b-4 border-springPink py-4'
               : 'py-4'
           }
         >
@@ -25,7 +25,7 @@ export default function SubNavi() {
           to="/exhibition/summer"
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-summerGreen_01 border-b-2 border-summerGreen_01 py-4'
+              ? 'font-bold text-summerGreen_01 border-b-4 border-summerGreen_01 py-4'
               : 'py-4'
           }
         >
@@ -35,7 +35,7 @@ export default function SubNavi() {
           to="/exhibition/fall"
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-fallPurple border-b-2 border-fallPurple py-4'
+              ? 'font-bold text-fallPurple border-b-4 border-fallPurple py-4'
               : 'py-4'
           }
         >
@@ -45,7 +45,7 @@ export default function SubNavi() {
           to="/exhibition/winter"
           className={({ isActive }) =>
             isActive
-              ? 'font-bold text-winterBlue border-b-2 border-winterBlue py-4'
+              ? 'font-bold text-winterBlue border-b-4 border-winterBlue py-4'
               : 'py-4'
           }
         >
