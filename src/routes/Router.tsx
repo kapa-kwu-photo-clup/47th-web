@@ -1,9 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout';
 import MainPage from '../pages/MainPage/mainPage';
-import ComePage from '../pages/ComePage/comePage';
+import VisitPage from '../pages/VisitPage/visitPage';
 import ExhibitionPage from '../pages/exhibitionPage/ExhibitionPage';
-import EventPage from '../pages/EventPage/eventPage';
+import SpringPage from '../pages/exhibitionPage/springPage/SpringPage';
+import SummerPage from '../pages/exhibitionPage/summerPage/SummerPage';
+import FallPage from '../pages/exhibitionPage/fallPage/FallPage';
+import WinterPage from '../pages/exhibitionPage/winterPage/WinterPage';
+import GoodsPage from '../pages/GoodsPage/goodsPage';
 
 export const router = createBrowserRouter([
   {
@@ -15,16 +19,33 @@ export const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: '/come',
-        element: <ComePage />,
+        path: '/visit',
+        element: <VisitPage />,
       },
       {
         path: '/exhibition',
         element: <ExhibitionPage />,
       },
       {
-        path: '/event',
-        element: <EventPage />,
+        path: '/exhibition/spring',
+        element: <SpringPage />,
+      },
+      {
+        path: '/exhibition/summer',
+        element: <SummerPage />,
+      },
+      {
+        path: '/exhibition/fall',
+        element: <FallPage />,
+      },
+
+      {
+        path: '/exhibition/winter',
+        element: <WinterPage />,
+      },
+      {
+        path: '/goods',
+        element: <GoodsPage />,
       },
     ],
   },

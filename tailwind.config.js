@@ -34,6 +34,8 @@ export default {
       white: '#ffffff',
       black_22: '#222222',
       lightGray: '#f5f5f5',
+      gray_bd: '#BDBDBD',
+      gray_71: '#717171',
       //계절 컬러
       springPink: '#cf569b',
       summerGreen_01: '#b2d35a',

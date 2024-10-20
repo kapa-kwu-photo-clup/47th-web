@@ -16,7 +16,7 @@ export default function Header() {
         'lg:border-b-4 lg:border-springPink lg:text-black_22 text-springPink',
     },
     {
-      to: '/come',
+      to: '/visit',
       label: 'VISIT',
       color:
         'lg:border-b-4 lg:border-summerGreen_01 lg:text-black_22 text-summerGreen_01',
@@ -28,8 +28,8 @@ export default function Header() {
         'lg:border-b-4 lg:border-fallPurple lg:text-black_22 text-fallPurple',
     },
     {
-      to: '/event',
-      label: 'EVENT',
+      to: '/goods',
+      label: 'GOODS',
       color:
         'lg:border-b-4 lg:border-winterBlue lg:text-black_22 text-winterBlue',
     },
@@ -37,6 +37,13 @@ export default function Header() {
 
   const handleNavItemClick = () => {
     setShowMenu(false);
+  };
+
+  const isActiveRoute = (path: string) => {
+    if (path === '/') {
+      return location.pathname === path;
+    }
+    return location.pathname.startsWith(path);
   };
 
   return (
@@ -49,7 +56,7 @@ export default function Header() {
               key={item.to}
               to={item.to}
               label={item.label}
-              isActive={location.pathname === item.to}
+              isActive={isActiveRoute(item.to)}
               activeColor={item.color}
             />
           ))}
