@@ -20,7 +20,7 @@ export default function MainPage() {
 
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
-      <div className=" mt-[4.5rem]">
+      <div className="">
         <Lottie options={defaultOptions} />
       </div>
     </div>

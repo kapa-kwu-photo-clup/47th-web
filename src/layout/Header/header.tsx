@@ -90,7 +90,15 @@ export default function Header() {
               key={item.to}
               to={item.to}
               label={item.label}
-              isActive={location.pathname === item.to}
+              isActive={
+                location.pathname === item.to ||
+                (location.pathname === '/exhibition/summer' &&
+                  item.to === '/exhibition/spring') ||
+                (location.pathname === '/exhibition/fall' &&
+                  item.to === '/exhibition/spring') ||
+                (location.pathname === '/exhibition/winter' &&
+                  item.to === '/exhibition/spring')
+              }
               activeColor={item.color}
               onClick={handleNavItemClick}
             />
