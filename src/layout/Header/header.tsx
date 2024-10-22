@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavItem from './_components/navItem';
 
 import kapaLogoImg from '../../assets/images/svg/kapa-logo.svg';
@@ -42,7 +42,14 @@ export default function Header() {
   return (
     <header className="w-full border-b-2 border-lightGray bg-white">
       <div className="lg:w-3/4 lg:px-0 px-5 mx-auto relative flex justify-between items-center">
-        <img src={kapaLogoImg} alt="kapa logo" className="h-5 py-auto" />
+        <Link to="/">
+          <img
+            src={kapaLogoImg}
+            alt="kapa logo"
+            className="lg:h-9 h-7 py-auto"
+          />
+        </Link>
+
         <nav className="gap-16 text-xl lg:flex hidden">
           {navItems.map((item) => (
             <NavItem

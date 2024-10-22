@@ -21,7 +21,7 @@ export default function MainPage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <div className="flex flex-col gap-40">
-        <Lottie options={defaultOptions} />
+        <Lottie options={defaultOptions} isClickToPauseDisabled />
 
         <p className=" text-center ">
           인사말 <br />
