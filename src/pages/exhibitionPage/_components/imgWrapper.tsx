@@ -1,4 +1,7 @@
+import React, { useState } from 'react';
 import { pictureData } from '../../../assets/data/pictureData';
+import ImageCard from './imgCard';
+import Modal from './modal'; // Modal 컴포넌트 임포트
 
 export interface Picture {
   season: string;
@@ -18,17 +21,28 @@ interface ImgWrapperProps {
 export default function ImgWrapper({ season }: ImgWrapperProps) {
   const seasonImg = pictureData.filter((item) => item.season === season);
 
+  // 모달 상태 관리
+  const [selectedImage, setSelectedImage] = useState<Picture | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (image: Picture) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
-    <div className="flex flex-wrap my-24">
-      {seasonImg.map((item, index) => (
-        <div key={index} className={`w-1/2 lg:w-1/4 relative lg:p-[1.35rem]`}>
-          <img
-            className="w-full h-full object-cover p-3 lg:hover:p-0 aspect-square"
-            src={`../../../../${item.address}`}
-            alt={`${item.season}-${item.flag}기-${item.name}-${item.title}`}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="flex flex-wrap my-24">
+        {seasonImg.map((item, index) => (
+          <ImageCard key={index} item={item} onClick={() => openModal(item)} />
+        ))}
+      </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal} image={selectedImage} />
+    </>
   );
 }
