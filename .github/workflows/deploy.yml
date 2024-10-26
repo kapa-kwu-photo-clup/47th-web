@@ -1,0 +1,32 @@
+name: Synchronize to forked repo
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  sync:
+    name: Sync forked repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.FORK_AUTO_TOKEN }}
+          fetch-depth: 0
+          ref: dev
+
+      - name: Add remote-url
+        run: |
+          git remote add forked-repo https://jamooooong:${{ secrets.FORK_AUTO_TOKEN }}@github.com/jamooooong/47th-web-vercel
+          git config user.name jamooooong
+          git config user.email ${{ secrets.EMAIL }}
+
+      - name: Push changes to forked-repo
+        run: |
+          git push -f forked-repo dev
+
+      - name: Clean up
+        run: |
+          git remote remove forked-repo
