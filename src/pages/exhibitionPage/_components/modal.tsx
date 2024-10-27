@@ -1,20 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Picture } from './imgWrapper';
-// import arrowBack from '../../../assets/images/svg/arrow/back/arrow_back_btn.svg';
-// import arrowBackSpring from '../../../assets/images/svg/arrow/back/spring_arrow_back_btn.svg';
-// import arrowBackSummer from '../../../assets/images/svg/arrow/back/summer_arrow_back_btn.svg';
-// import arrowBackFall from '../../../assets/images/svg/arrow/back/fall_arrow_back_btn.svg';
-// import arrowBackWinter from '../../../assets/images/svg/arrow/back/winter_arrow_back_btn.svg';
-// import arrowNext from '../../../assets/images/svg/arrow/next/arrow_next_btn.svg';
-// import arrowNextSpring from '../../../assets/images/svg/arrow/next/spring_arrow_next_btn.svg';
-// import arrowNextSummer from '../../../assets/images/svg/arrow/next/summer_arrow_next_btn.svg';
-// import arrowNextFall from '../../../assets/images/svg/arrow/next/fall_arrow_next_btn.svg';
-// import arrowNextWinter from '../../../assets/images/svg/arrow/next/winter_arrow_next_btn.svg';
-// import close from '../../../assets/images/svg/close/close_btn.svg';
-// import closeSpring from '../../../assets/images/svg/close/close_spring_btn.svg';
-// import closeSummer from '../../../assets/images/svg/close/close_summer_btn.svg';
-// import closeFall from '../../../assets/images/svg/close/close_fall_btn.svg';
-// import closeWinter from '../../../assets/images/svg/close/close_winter_btn.svg';
+import CloseBtn from '../../../assets/images/svg/close/closeBtn';
+import BackBtn from '../../../assets/images/svg/arrow/back/backBtn';
+import NextBtn from '../../../assets/images/svg/arrow/next/nextBtn';
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,23 +11,64 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
+  const [close, setClose] = useState('default');
+  const [back, setBack] = useState('default');
+  const [next, setNext] = useState('default');
+
   if (!isOpen || !image) return null; // 모달이 열리지 않거나 이미지가 없으면 null 반환
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-5 rounded-lg shadow-lg relative">
-        <button className="absolute top-2 right-2" onClick={onClose}>
-          x
+    <div className="fixed inset-0 flex items-center justify-center bg-gray_71 bg-opacity-70">
+      <div className="bg-white lg:w-3/4 lg:h-[47rem] flex flex-col items-center">
+        <button
+          className="self-end"
+          onClick={onClose}
+          onMouseEnter={() => setClose(image.season)}
+          onMouseLeave={() => setClose('default')}
+        >
+          <CloseBtn season={close} />
         </button>
-        <div>{image.flag} 기</div>
-        <div>{image.name}</div>
-        <div>{image.title}</div>
-        <div>{image.content}</div>
-        {/* <img
-          className="w-full h-auto mt-4"
-          src={`../../../../${image.address}`}
-          alt={image.title}
-        /> */}
+        <div className="flex justify-center items-center">
+          <img
+            className="w-[25rem]"
+            src={`../../../../${image.address}`}
+            alt={image.title}
+          />
+          <div className="w-[19rem] ml-10">
+            <div className="flex items-center">
+              <div
+                className={`w-16 text-white px-2 py-1 text-xl mr-2 ${
+                  image.season === '봄'
+                    ? 'bg-springPink'
+                    : image.season === '여름'
+                    ? 'bg-summerGreen_01'
+                    : image.season === '가을'
+                    ? 'bg-fallPurple'
+                    : 'bg-winterBlue'
+                }`}
+              >
+                {image.flag} 기
+              </div>
+              <div className="text-xl">{image.name}</div>
+            </div>
+            <div className="text-4xl my-4">{image.title}</div>
+            <div className="text-xl">{image.content}</div>
+          </div>
+        </div>
+        <div className="self-end">
+          <button
+            onMouseEnter={() => setBack(image.season)}
+            onMouseLeave={() => setBack('default')}
+          >
+            <BackBtn season={back} />
+          </button>
+          <button
+            onMouseEnter={() => setNext(image.season)}
+            onMouseLeave={() => setNext('default')}
+          >
+            <NextBtn season={next} />
+          </button>
+        </div>
       </div>
     </div>
   );
