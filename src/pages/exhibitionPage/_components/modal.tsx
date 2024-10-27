@@ -21,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-gray_71 bg-opacity-70">
       <div className="bg-white lg:w-3/4 lg:h-[47rem] flex flex-col items-center">
         <button
-          className="self-end"
+          className="self-end mr-8 mt-8"
           onClick={onClose}
           onMouseEnter={() => setClose(image.season)}
           onMouseLeave={() => setClose('default')}
@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
             alt={image.title}
           />
           <div className="w-[19rem] ml-10">
-            <div className="flex items-center">
+            <div className="flex items-center  font-bold">
               <div
                 className={`w-16 text-white px-2 py-1 text-xl mr-2 ${
                   image.season === '봄'
@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
             <div className="text-xl">{image.content}</div>
           </div>
         </div>
-        <div className="self-end">
+        <div className="self-end mr-8 mb-8">
           <button
             onMouseEnter={() => setBack(image.season)}
             onMouseLeave={() => setBack('default')}
