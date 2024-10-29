@@ -33,8 +33,8 @@ interface PictureData {
 // pictureData의 타입을 명시합니다.
 export default function ImgWrapper({ season }: ImgWrapperProps) {
   const seasonImg = pictureData.filter(
-    (item: PictureData) => item.season === season,
-  ); // item의 타입을 명시
+    (item: PictureData): item is PictureData => item.season === season,
+  );
 
   // 모달 상태 관리
   const [selectedImage, setSelectedImage] = useState<Picture | null>(null);
@@ -53,18 +53,9 @@ export default function ImgWrapper({ season }: ImgWrapperProps) {
   return (
     <>
       <div className="flex flex-wrap my-24">
-        {seasonImg.map(
-          (
-            item: PictureData,
-            index: number, // item과 index의 타입을 명시
-          ) => (
-            <ImageCard
-              key={index}
-              item={item}
-              onClick={() => openModal(item)}
-            />
-          ),
-        )}
+        {seasonImg.map((item: PictureData, index: number) => (
+          <ImageCard key={index} item={item} onClick={() => openModal(item)} />
+        ))}
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} image={selectedImage} />
     </>
