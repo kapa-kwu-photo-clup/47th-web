@@ -18,7 +18,7 @@ export const pictureData: Picture[] = [
     camera: 'Leica Q3, Summilux 28 f/1.7 ASPH',
     title: 'popcorn',
     content: '만개한 벚꽃이 마치 팝콘같지 않나요?',
-    address: 'public/webp/spring_1.webp',
+    address: 'https://www.kapaforever.site/webp/spring_1.webp',
   },
   {
     season: '봄',
