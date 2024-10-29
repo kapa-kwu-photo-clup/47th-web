@@ -1,10 +1,11 @@
 import SubNavi from '../_components/subNavi';
+import ImgWrapper from '../_components/imgWrapper';
 
 export default function FallPage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <SubNavi />
-      <p>가을</p>
+      <ImgWrapper season="가을" />
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import SubNavi from '../_components/subNavi';
+import ImgWrapper from '../_components/imgWrapper';
 
 export default function WinterPage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <SubNavi />
-      <p>겨울</p>
+      <ImgWrapper season="겨울" />
     </div>
   );
 }
