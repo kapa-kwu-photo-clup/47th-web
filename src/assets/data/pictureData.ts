@@ -18,7 +18,7 @@ export const pictureData: Picture[] = [
     camera: 'Leica Q3, Summilux 28 f/1.7 ASPH',
     title: 'popcorn',
     content: '만개한 벚꽃이 마치 팝콘같지 않나요?',
-    address: 'src/assets/images/webp/1봄_42기_김성근_전자재료공학과.webp',
+    address: 'src/assets/images/webp/spring_1.webp',
   },
   {
     season: '봄',
