@@ -45,7 +45,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <img
             className={`mt-24 lg:mt-0 ${imgClass}`}
-            src={`../../../../${image.address}`}
+            //src={`../../../../${image.address}`}
+            src={image.address}
             alt={image.title}
             onLoad={handleImageLoad}
           />
