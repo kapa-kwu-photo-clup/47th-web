@@ -14,28 +14,43 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
   const [close, setClose] = useState('default');
   const [back, setBack] = useState('default');
   const [next, setNext] = useState('default');
+  const [imgClass, setImgClass] = useState('w-auto h-auto');
 
   if (!isOpen || !image) return null; // 모달이 열리지 않거나 이미지가 없으면 null 반환
 
+  const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const { naturalWidth, naturalHeight } = event.currentTarget;
+
+    // 가로가 더 넓은 경우
+    if (naturalWidth > naturalHeight) {
+      setImgClass('w-full h-auto lg:h-[25rem] lg:w-auto'); // Tailwind 클래스 설정
+    }
+    // 세로가 더 넓은 경우
+    else if (naturalHeight > naturalWidth) {
+      setImgClass('w-2/3 h-auto lg:w-[25rem]'); // Tailwind 클래스 설정
+    }
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray_71 bg-opacity-70">
-      <div className="bg-white lg:w-3/4 lg:h-[47rem] flex flex-col items-center">
+    <div className="fixed inset-0 flex items-start mt-[4.25rem] lg:items-center justify-center bg-white lg:bg-gray_71 lg:bg-opacity-70">
+      <div className="bg-white w-full h-full lg:w-3/4 lg:h-[47rem] flex flex-col items-center lg:justify-center px-2 relative overflow-y-auto">
         <button
-          className="self-end mr-8 mt-8"
+          className="absolute top-2 right-0 lg:top-8 lg:right-8"
           onClick={onClose}
           onMouseEnter={() => setClose(image.season)}
           onMouseLeave={() => setClose('default')}
         >
           <CloseBtn season={close} />
         </button>
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <img
-            className="w-[25rem]"
+            className={`mt-24 lg:mt-0 ${imgClass}`}
             src={`../../../../${image.address}`}
             alt={image.title}
+            onLoad={handleImageLoad}
           />
-          <div className="w-[19rem] ml-10">
-            <div className="flex items-center  font-bold">
+          <div className="w-full mt-10 lg:w-[19rem] lg:ml-10">
+            <div className="flex items-center font-bold">
               <div
                 className={`w-16 text-white px-2 py-1 text-xl mr-2 ${
                   image.season === '봄'
@@ -55,7 +70,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
             <div className="text-xl">{image.content}</div>
           </div>
         </div>
-        <div className="self-end mr-8 mb-8">
+        <div className="absolute top-2 left-0 lg:top-auto lg:left-auto lg:right-8 lg:bottom-8 flex space-x-2">
           <button
             onMouseEnter={() => setBack(image.season)}
             onMouseLeave={() => setBack('default')}
