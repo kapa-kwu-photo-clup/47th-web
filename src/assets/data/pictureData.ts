@@ -18,7 +18,7 @@ export const pictureData: Picture[] = [
     camera: 'Leica Q3, Summilux 28 f/1.7 ASPH',
     title: 'popcorn',
     content: '만개한 벚꽃이 마치 팝콘같지 않나요?',
-    address: 'https://www.kapaforever.site/webp/spring_1.webp',
+    address: '/public/webp/1봄_42기_김성근_전자재료공학과.webp',
   },
   {
     season: '봄',
@@ -29,7 +29,7 @@ export const pictureData: Picture[] = [
     title: '젠트리피케이션에 대해…',
     content:
       '성수 뒤쪽 한산한 동네 주민은 나의 일이 아닌 듯 하면서도 피어오르는 불안감을 꾹꾹 내리누르기 위해 산책을 나갔다. ',
-    address: 'src/assets/images/webp/1봄_45기_경준하_경영학부.webp',
+    address: '@_webp/1봄_45기_경준하_경영학부.webp',
   },
   {
     season: '봄',
