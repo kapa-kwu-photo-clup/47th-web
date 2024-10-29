@@ -23,11 +23,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
 
     // 가로가 더 넓은 경우
     if (naturalWidth > naturalHeight) {
-      setImgClass('w-full h-auto lg:h-[25rem] lg:w-auto'); // Tailwind 클래스 설정
+      setImgClass('w-full h-auto lg:h-[25rem] lg:w-auto');
     }
     // 세로가 더 넓은 경우
     else if (naturalHeight > naturalWidth) {
-      setImgClass('w-2/3 h-auto lg:w-[25rem]'); // Tailwind 클래스 설정
+      setImgClass('w-2/3 h-auto lg:w-[25rem]');
     }
   };
 
