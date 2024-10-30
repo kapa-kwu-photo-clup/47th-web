@@ -1,7 +1,7 @@
 import { useScrollToTop } from '../../hooks/useScrollToTop';
 import { useMediaQuery } from 'react-responsive';
-import GoodsImg from '../../assets/images/jpg/goodsImg.jpg';
-import GoodsImgMobile from '../../assets/images/jpg/GoodsImgMobile.jpg';
+import GoodsImg from '../../assets/images/webp/goodsImg.webp';
+import GoodsImgMobile from '../../assets/images/webp/GoodsImgMobile.webp';
 import GoodsBox from './_components/goodsBox';
 import keyRingImgSrc from '../../assets/images/webp/키링 이미지.webp';
 import PostcardImgSrc from '../../assets/images/webp/엽서 이미지.webp';
