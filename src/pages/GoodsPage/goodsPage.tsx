@@ -2,6 +2,8 @@ import { useScrollToTop } from '../../hooks/useScrollToTop';
 import { useMediaQuery } from 'react-responsive';
 import GoodsImg from '../../assets/images/jpg/goodsImg.jpg';
 import GoodsImgMobile from '../../assets/images/jpg/goodsImgMobile.jpg';
+import KiringImg from '../../assets/images/jpg/키링썸네일.jpg';
+import PostcardImg from '../../assets/images/jpg/엽서썸네일.jpg';
 import GoodsBox from './_components/goodsBox';
 export default function GoodsPage() {
   useScrollToTop();
@@ -18,7 +20,7 @@ export default function GoodsPage() {
         <div className=" flex flex-wrap mb-40">
           <div className="lg:w-1/4 w-1/2 lg:mb-0 mb-11">
             <GoodsBox
-              imgSrc="https://www.kapaforever.site/webp/GoodsImg.webp"
+              imgSrc={KiringImg}
               goodsName="2025 미니 달력"
               goodsSubtitle="사계절을 담은 달력"
               goodsPrice="5,000원"
@@ -26,7 +28,7 @@ export default function GoodsPage() {
           </div>
           <div className="lg:w-1/4 w-1/2 lg:mb-0 mb-11">
             <GoodsBox
-              imgSrc="https://www.kapaforever.site/webp/키링 이미지.webp"
+              imgSrc={KiringImg}
               goodsName="필름 키링"
               goodsSubtitle="달랑달랑 필름 키링"
               goodsPrice="500원"
@@ -34,7 +36,7 @@ export default function GoodsPage() {
           </div>
           <div className="lg:w-1/4 w-1/2 lg:mb-0 mb-11">
             <GoodsBox
-              imgSrc="https://www.kapaforever.site/webp/엽서 이미지.webp"
+              imgSrc={PostcardImg}
               goodsName="엽서"
               goodsSubtitle="전시작을 담은 엽서"
               goodsPrice="무료"
