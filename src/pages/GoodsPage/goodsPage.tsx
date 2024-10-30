@@ -1,10 +1,10 @@
 import { useScrollToTop } from '../../hooks/useScrollToTop';
 import { useMediaQuery } from 'react-responsive';
-import GoodsImg from '../../assets/images/webp/goodsImg.webp';
-import GoodsImgMobile from '../../assets/images/webp/GoodsImgMobile.webp';
+import GoodsImg from 'https://www.kapaforever.site/webp/GoodsImg.webp';
+import GoodsImgMobile from 'https://www.kapaforever.site/webp/GoodsImgMobile.webp';
 import GoodsBox from './_components/goodsBox';
-import keyRingImgSrc from '../../assets/images/webp/키링 이미지.webp';
-import PostcardImgSrc from '../../assets/images/webp/엽서 이미지.webp';
+import keyRingImgSrc from 'https://www.kapaforever.site/webp/키링 이미지.webp';
+import PostcardImgSrc from 'https://www.kapaforever.site/webp/엽서 이미지.webp';
 export default function GoodsPage() {
   useScrollToTop();
 
