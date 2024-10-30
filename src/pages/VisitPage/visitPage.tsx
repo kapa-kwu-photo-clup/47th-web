@@ -8,7 +8,12 @@ export default function ComePage() {
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <div className="flex flex-col gap-4 mb-5">
         <p className="text-5xl font-bold">레온 갤러리 구의</p>
-        <Map center={{ lat: 37.5378952, lng: 127.0848809 }} zoom={15} />
+        <Map
+          center={{ lat: 37.5378952, lng: 127.0848809 }}
+          zoom={15}
+          address="서울 광진구 자양로18길 25 지하1층"
+          buildingName="레온갤러리 구의 플레이스라운드"
+        />
         <div className="mt-16">
           <p className="text-4xl">서울 광진구 자양로18길 25 지하1층</p>
           <p className="text-xl text-gray_71 py-9">
