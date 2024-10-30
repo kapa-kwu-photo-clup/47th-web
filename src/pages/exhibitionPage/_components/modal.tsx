@@ -16,24 +16,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
   const [next, setNext] = useState('default');
   const [imgClass, setImgClass] = useState('w-auto h-auto');
 
-  if (!isOpen || !image) return null; // 모달이 열리지 않거나 이미지가 없으면 null 반환
+  if (!isOpen || !image) return null;
 
   const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
     const { naturalWidth, naturalHeight } = event.currentTarget;
 
     // 가로가 더 넓은 경우
     if (naturalWidth > naturalHeight) {
-      setImgClass('w-full h-auto lg:h-[25rem] lg:w-auto'); // Tailwind 클래스 설정
+      setImgClass('w-full h-auto lg:h-[25rem] lg:w-auto');
     }
     // 세로가 더 넓은 경우
     else if (naturalHeight > naturalWidth) {
-      setImgClass('w-2/3 h-auto lg:w-[25rem]'); // Tailwind 클래스 설정
+      setImgClass('w-2/3 h-auto lg:w-[25rem]');
     }
   };
 
   return (
     <div className="fixed inset-0 flex items-start mt-[4.25rem] lg:items-center justify-center bg-white lg:bg-gray_71 lg:bg-opacity-70">
-      <div className="bg-white w-full h-full lg:w-3/4 lg:h-[47rem] flex flex-col items-center lg:justify-center px-2 relative overflow-y-auto">
+      <div className="bg-white w-full h-full lg:w-3/4 lg:h-[47rem] flex flex-col items-center lg:justify-center px-2 relative overflow-y-auto pb-24">
         <button
           className="absolute top-2 right-0 lg:top-8 lg:right-8"
           onClick={onClose}
@@ -52,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, image }) => {
           <div className="w-full mt-10 lg:w-[19rem] lg:ml-10">
             <div className="flex items-center font-bold">
               <div
-                className={`w-16 text-white px-2 py-1 text-xl mr-2 ${
+                className={`text-white px-2 py-1 text-xl mr-2 ${
                   image.season === '봄'
                     ? 'bg-springPink'
                     : image.season === '여름'
