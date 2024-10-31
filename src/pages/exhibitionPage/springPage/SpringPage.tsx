@@ -1,12 +1,15 @@
+import React, { Suspense } from 'react';
 import SubNavi from '../_components/subNavi';
-import imgSrc from '../../../assets/images/webp/1봄_42기_김성근_전자재료공학과.webp';
+
+// 동적으로 컴포넌트 로딩
+const ImgWrapper = React.lazy(() => import('../_components/imgWrapper'));
 export default function SpringPage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <SubNavi />
-      <p>봄</p>
-      <img src={imgSrc} alt="봄" />
-      {/* 사진 import 예시임 지우셈 */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <ImgWrapper season="봄" />
+      </Suspense>
     </div>
   );
 }
