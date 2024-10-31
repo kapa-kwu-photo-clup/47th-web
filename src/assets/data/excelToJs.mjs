@@ -15,7 +15,7 @@ const excelToJs = () => {
   const data = XLSX.utils.sheet_to_json(sheet);
 
   const pictureData = data.map((item) => ({
-    order: item['순번'],
+    index: item['순번'],
     season: item['계절'],
     flag: item['기수'],
     name: item['이름'],
@@ -32,7 +32,7 @@ const excelToJs = () => {
     null,
     2,
   )}`;
-  fs.writeFileSync(`${jsPath}/pictureData.js`, jsContent, 'utf-8');
+  fs.writeFileSync(`${jsPath}/pictureData.ts`, jsContent, 'utf-8');
 
   console.log('excelToJs done');
 };

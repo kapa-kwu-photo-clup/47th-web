@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { pictureData } from '../../../assets/data/pictureData';
 import ImageCard from './imgCard';
-import Modal from './modal'; // Modal 컴포넌트 임포트
+import Modal from './modal';
 
 export interface Picture {
+  index: number;
   season: string;
   flag: number;
   name: string;
@@ -18,8 +19,8 @@ interface ImgWrapperProps {
   season: string;
 }
 
-// pictureData의 타입을 정의합니다.
 interface PictureData {
+  index: number;
   season: string;
   flag: number;
   name: string;
@@ -30,7 +31,6 @@ interface PictureData {
   address: string;
 }
 
-// pictureData의 타입을 명시합니다.
 export default function ImgWrapper({ season }: ImgWrapperProps) {
   const seasonImg = pictureData.filter(
     (item: PictureData): item is PictureData => item.season === season,
@@ -50,14 +50,60 @@ export default function ImgWrapper({ season }: ImgWrapperProps) {
     setSelectedImage(null);
   };
 
+  // 모달에서 이전, 다음 이미지 보여주기
+  const handleBack = () => {
+    if (selectedImage) {
+      const currentIndex = seasonImg.findIndex(
+        (item) => item.index === selectedImage.index,
+      );
+      const prevIndex =
+        (currentIndex - 1 + seasonImg.length) % seasonImg.length;
+      setSelectedImage(seasonImg[prevIndex]);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedImage) {
+      const currentIndex = seasonImg.findIndex(
+        (item) => item.index === selectedImage.index,
+      );
+      const nextIndex = (currentIndex + 1) % seasonImg.length;
+      setSelectedImage(seasonImg[nextIndex]);
+    }
+  };
+
+  // 모달 스크롤 방지
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isModalOpen]);
+
   return (
     <>
       <div className="flex flex-wrap my-24">
-        {seasonImg.map((item: PictureData, index: number) => (
-          <ImageCard key={index} item={item} onClick={() => openModal(item)} />
+        {seasonImg.map((item: PictureData) => (
+          <ImageCard
+            key={item.index}
+            item={item}
+            onClick={() => openModal(item)}
+          />
         ))}
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} image={selectedImage} />
+      {selectedImage && (
+        <Modal
+          isOpen={selectedImage !== null}
+          onClose={closeModal}
+          image={selectedImage}
+          onBack={handleBack}
+          onNext={handleNext}
+        />
+      )}
     </>
   );
 }
