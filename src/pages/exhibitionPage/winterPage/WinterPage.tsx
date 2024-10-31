@@ -1,11 +1,16 @@
+import React, { Suspense } from 'react';
 import SubNavi from '../_components/subNavi';
-import ImgWrapper from '../_components/imgWrapper';
+
+// 동적으로 컴포넌트 로딩
+const ImgWrapper = React.lazy(() => import('../_components/imgWrapper'));
 
 export default function WinterPage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
       <SubNavi />
-      <ImgWrapper season="겨울" />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ImgWrapper season="겨울" />
+      </Suspense>
     </div>
   );
 }
