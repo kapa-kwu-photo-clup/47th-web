@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        Pretendard: ['Pretendard'],
+      },
       animation: {
         fadeInDown: 'fadeInDown 0.7s ease-in-out',
         growDown: 'growDown 0.5s ease-in-out',

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  src: url('./styles/fonts/pretendard/Pretendard-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  src: url('./styles/fonts/pretendard/Pretendard-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  src: url('./styles/fonts/pretendard/Pretendard-Regular.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Pretendard';
+}
