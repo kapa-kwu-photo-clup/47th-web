@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+# kapaforever.site 카파 47회 전시회 사이트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KAPA의 47회 전시회를 위해 제작 배포되는 웹사이트입니다.</br>
+KAPA 41기 박우석 42기 최승아가 제작하였습니다.
 
-Currently, two official plugins are available:
+### 배포주소 </br> Click -> [KAPA 47회 정기 전시회](https://www.kapaforever.site/) <- Click 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</br></br>
 
-## Expanding the ESLint configuration
+# Contributors
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+| <img src="https://avatars.githubusercontent.com/u/102500033?v=4" width="200"> | <img src="https://avatars.githubusercontent.com/u/92146550?v=4" width="200"> |
+|:-:|:-:|
+|우석|승아|
+|[jamooooong](https://github.com/jamooooong)|[winA](https://github.com/winnaba61)|
+|Frontend|FrontEnd|
 
-- Configure the top-level `parserOptions` property like this:
+</br></br></br>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# Skills
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### deploy </br>
+![vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### develop </br>
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![ts](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![tailwindCss](	https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### design </br>
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Ai](https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white)
