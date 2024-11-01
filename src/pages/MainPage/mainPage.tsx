@@ -19,7 +19,7 @@ export default function MainPage() {
   };
 
   return (
-    <div className="lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
+    <div className="lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto lg:mt-[4.5rem]">
       <div className="flex flex-col gap-20">
         <Lottie options={defaultOptions} isClickToPauseDisabled />
         <div className="flex flex-col gap-16 text-center mt-20">
