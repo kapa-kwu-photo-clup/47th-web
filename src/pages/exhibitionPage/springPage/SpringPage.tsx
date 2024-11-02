@@ -5,7 +5,7 @@ import SubNavi from '../_components/subNavi';
 const ImgWrapper = React.lazy(() => import('../_components/imgWrapper'));
 export default function SpringPage() {
   return (
-    <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto">
+    <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto lg:mt-[4.5rem]">
       <SubNavi />
       <Suspense fallback={<div>Loading...</div>}>
         <ImgWrapper season="봄" />

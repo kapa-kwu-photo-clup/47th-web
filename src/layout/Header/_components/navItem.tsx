@@ -16,13 +16,13 @@ export default function NavItem({
   onClick,
 }: NavItemProps) {
   return (
-    <div
-      className={`lg:py-4 lg:px-0 py-8 px-5 ${isActive ? activeColor : ''}`}
-      onClick={onClick}
-    >
-      <Link to={to} className={` ${isActive ? 'font-bold' : ''}`}>
+    <Link to={to} className={` ${isActive ? 'font-bold' : ''}`}>
+      <div
+        className={`lg:py-4 lg:px-0 py-8 px-5 ${isActive ? activeColor : ''}`}
+        onClick={onClick}
+      >
         {label}
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
