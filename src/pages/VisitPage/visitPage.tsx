@@ -27,6 +27,7 @@ export default function ComePage() {
           buildingName="레온갤러리 구의 플레이스라운드"
           link={link}
         />
+        {/* Content Wrapper */}
         <div className="mt-16">
           <p className="text-4xl">서울 광진구 자양로18길 25 지하1층</p>
           <p className="text-xl text-gray_71 py-9">

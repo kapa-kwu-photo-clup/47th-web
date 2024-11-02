@@ -1,3 +1,4 @@
+// 계절에 맞게 Next btn 반환하는 함수
 import next_btn from './next_btn_basic.svg';
 import next_btn_spring from './next_btn_spring.svg';
 import next_btn_summer from './next_btn_summer.svg';
@@ -15,7 +16,7 @@ const getNextIcon = (season: string) => {
     case '겨울':
       return <img src={next_btn_winter} />;
     default:
-      return <img src={next_btn} />; // 기본 아이콘
+      return <img src={next_btn} />;
   }
 };
 

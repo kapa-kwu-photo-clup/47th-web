@@ -1,8 +1,9 @@
+// 개별 이미지 카드 컴포넌트
 import React from 'react';
 import { Picture } from './imgWrapper';
 
 interface ImageCardProps {
-  item: Picture;
+  item: Picture; // 이미지 정보를 props로 받음
   onClick: () => void; // 클릭 핸들러를 props로 받음
 }
 
