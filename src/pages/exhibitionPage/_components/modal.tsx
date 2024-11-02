@@ -24,9 +24,9 @@ const Modal: React.FC<ModalProps> = ({
   const [next, setNext] = useState('default');
   const [imgClass, setImgClass] = useState('w-auto h-auto');
 
-  if (!isOpen || !image) return null;
+  if (!isOpen || !image) return null; // 모달이 열리지 않았거나 이미지가 없을 경우 null 반환
 
-  // 이미지 로딩 후 가로세로 비율에 따라 이미지 사이즈 조정
+  // 이미지 로딩 후 가로세로 비율에 따라 이미지 크기 조절
   const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
     const { naturalWidth, naturalHeight } = event.currentTarget;
 
@@ -47,6 +47,7 @@ const Modal: React.FC<ModalProps> = ({
         onClick={(e) => e.stopPropagation()}
         className="bg-white w-full h-full lg:w-3/4 lg:h-[47rem] flex flex-col items-center lg:justify-center px-2 relative overflow-y-auto pb-24 lg:pb-0"
       >
+        {/* Close Btn */}
         <button
           className="absolute top-2 right-0 lg:top-8 lg:right-8"
           onClick={onClose}
@@ -59,6 +60,7 @@ const Modal: React.FC<ModalProps> = ({
         >
           <CloseBtn season={close} />
         </button>
+        {/* 본문 Wrapper */}
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <img
             className={`mt-24 lg:mt-0 ${imgClass}`}
@@ -66,6 +68,7 @@ const Modal: React.FC<ModalProps> = ({
             alt={image.title}
             onLoad={handleImageLoad}
           />
+          {/* Text Wrapper */}
           <div className="w-full mt-10 lg:w-[19rem] lg:ml-10">
             <div className="flex items-center font-bold">
               <div
@@ -87,7 +90,9 @@ const Modal: React.FC<ModalProps> = ({
             <div className="text-xl">{image.content}</div>
           </div>
         </div>
+        {/* Btn Wrapper */}
         <div className="absolute top-2 left-0 lg:top-auto lg:left-auto lg:right-8 lg:bottom-8 flex space-x-2">
+          {/* lg screen일 때만 hover 기능 수행되도록 함수 추가 */}
           <button
             onMouseEnter={() => {
               if (window.innerWidth >= 1024) setBack(image.season);
