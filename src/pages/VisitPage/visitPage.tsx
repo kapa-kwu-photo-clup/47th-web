@@ -28,7 +28,9 @@ export default function ComePage() {
             지하철로 오실 경우
           </div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">구의역 (2호선) 1번 출구</div>
+            <div className="text-xl font-bold mb-1">
+              구의역 (2호선) 1번 출구
+            </div>
             <div className="text-xl text-gray_71">
               1번 출구로 나와서 더벤티 지나 우측 골목 이용 (도보 3분 거리)
             </div>
@@ -37,7 +39,9 @@ export default function ComePage() {
         <div className="border-b-2 border-lightGray lg:flex lg:py-8">
           <div className="text-4xl  lg:w-72">버스로 오실 경우</div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">광진구청 정류장(05148) 이용</div>
+            <div className="text-xl font-bold mb-1">
+              광진구청 정류장(05148) 이용
+            </div>
             <div className="text-xl text-gray_71">
               303, 2221, 2311, 3216, 3220
             </div>
@@ -46,7 +50,7 @@ export default function ComePage() {
         <div className="lg:flex lg:py-8">
           <div className="text-4xl  lg:w-72">자동차로 오실 경우</div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">자양로 18길 25</div>
+            <div className="text-xl font-bold mb-1">자양로 18길 25</div>
             <span className="text-xl text-gray_71">
               <span className="text-[#ff3838]">
                 전시장 주차가 불가능합니다.&nbsp;
