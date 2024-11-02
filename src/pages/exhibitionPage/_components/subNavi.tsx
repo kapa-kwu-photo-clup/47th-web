@@ -4,13 +4,13 @@ export default function SubNavi() {
   return (
     <>
       <div className="flex flex-col gap-4 mb-5">
-        <p className="text-5xl font-bold">전시</p>
-        <p className="text-xl font-base text-gray_71">
+        <p className="lg:text-5xl text-3xl font-bold">전시</p>
+        <p className="lg:text-xl text-lg font-base text-gray_71">
           사진을 눌러 크게 감상할 수 있습니다.
         </p>
       </div>
 
-      <nav className="w-full border-b-4 border-lightGray text-gray_bd flex flex-row gap-12 justify-center text-xl font-base">
+      <nav className="w-full border-b-4 border-lightGray text-gray_bd flex flex-row gap-12 justify-center lg:text-xl text-lg font-base">
         <NavLink
           to="/exhibition/spring"
           className={({ isActive }) =>
