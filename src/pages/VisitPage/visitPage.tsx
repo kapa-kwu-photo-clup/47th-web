@@ -4,15 +4,28 @@ import Map from './__components/map';
 export default function ComePage() {
   useScrollToTop();
 
+  const link =
+    'https://map.naver.com/p/entry/place/1858169120?c=15.00,0,0,0,dh';
+
+  const handleNavigation = () => {
+    window.open(link, '_blank');
+  };
+
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto lg:mt-[4.5rem]">
       <div className="flex flex-col gap-4 mb-5">
-        <p className="text-5xl font-bold">레온 갤러리 구의</p>
+        <p
+          className="text-5xl font-bold lg:cursor-pointer"
+          onClick={handleNavigation}
+        >
+          레온 갤러리 구의
+        </p>
         <Map
-          center={{ lat: 37.5378952, lng: 127.0848809 }}
-          zoom={15}
+          center={{ lat: 37.5378952, lng: 127.0848809 }} // 초기 위치 지정
+          zoom={17} // 초기 축적 50m
           address="서울 광진구 자양로18길 25 지하1층"
           buildingName="레온갤러리 구의 플레이스라운드"
+          link={link}
         />
         <div className="mt-16">
           <p className="text-4xl">서울 광진구 자양로18길 25 지하1층</p>
