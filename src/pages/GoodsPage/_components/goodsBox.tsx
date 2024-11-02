@@ -14,9 +14,9 @@ export default function GoodsBox({
   return (
     <div className="flex flex-col p-5">
       <img className="object-cover aspect-square mb-4" src={imgSrc} />
-      <p className="text-xl font-bold mb-1">{goodsName}</p>
-      <p className="text-xl font-base mb-8">{goodsSubtitle}</p>
-      <p className="text-xl font-bold">{goodsPrice}</p>
+      <p className="lg:text-xl text-lg font-bold mb-1">{goodsName}</p>
+      <p className="lg:text-xl text-lg font-base mb-8">{goodsSubtitle}</p>
+      <p className="lg:text-xl text-lg font-bold">{goodsPrice}</p>
     </div>
   );
 }

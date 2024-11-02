@@ -86,7 +86,7 @@ export default function ImgWrapper({ season }: ImgWrapperProps) {
 
   return (
     <>
-      <div className="flex flex-wrap my-24">
+      <div className="flex flex-wrap lg:my-24 my-12">
         {seasonImg.map((item: PictureData) => (
           <ImageCard
             key={item.index}
