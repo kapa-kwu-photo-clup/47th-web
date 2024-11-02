@@ -38,7 +38,7 @@ const Map: React.FC<MapProps> = ({ center, zoom, address, buildingName }) => {
     }
   }, [center, zoom, address, buildingName]);
 
-  return <div id="map" className="w-full lg:h-[45rem] h-48" />;
+  return <div id="map" className="w-full lg:h-[45rem] h-[22rem]" />;
 };
 
 export default Map;
