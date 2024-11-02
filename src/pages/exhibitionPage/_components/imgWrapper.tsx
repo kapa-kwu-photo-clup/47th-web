@@ -1,6 +1,6 @@
 // 전시 페이지 프리뷰 컴포넌트
 import { useEffect, useState } from 'react';
-import { pictureData } from '../../../assets/data/pictureData';
+import { pictureData } from '../../../assets/data/pictureData.ts';
 import ImageCard from './imgCard';
 import Modal from './modal';
 
@@ -78,8 +78,7 @@ export default function ImgWrapper({ season }: ImgWrapperProps) {
   return (
     <>
       <div className="flex flex-wrap lg:my-24 my-12">
-        {seasonImg.map((item: PictureData) => (
-
+        {seasonImg.map((item: Picture) => (
           <ImageCard
             key={item.index}
             item={item}
