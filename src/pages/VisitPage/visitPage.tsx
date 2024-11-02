@@ -4,16 +4,28 @@ import Map from './__components/map';
 export default function ComePage() {
   useScrollToTop();
 
+  const link =
+    'https://map.naver.com/p/entry/place/1858169120?c=15.00,0,0,0,dh';
+
+  const handleNavigation = () => {
+    window.open(link, '_blank');
+  };
+
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto lg:mt-[4.5rem]">
       <div className="flex flex-col gap-4 mb-5">
-        <p className="text-5xl font-bold">레온 갤러리 구의</p>
-        {/* Map Component */}
+        <p
+          className="text-5xl font-bold lg:cursor-pointer"
+          onClick={handleNavigation}
+        >
+          레온 갤러리 구의
+        </p>
         <Map
-          center={{ lat: 37.5378952, lng: 127.0848809 }}
-          zoom={15}
+          center={{ lat: 37.5378952, lng: 127.0848809 }} // 초기 위치 지정
+          zoom={17} // 초기 축적 50m
           address="서울 광진구 자양로18길 25 지하1층"
           buildingName="레온갤러리 구의 플레이스라운드"
+          link={link}
         />
         {/* Content Wrapper */}
         <div className="mt-16">
@@ -30,7 +42,9 @@ export default function ComePage() {
             지하철로 오실 경우
           </div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">구의역 (2호선) 1번 출구</div>
+            <div className="text-xl font-bold mb-1">
+              구의역 (2호선) 1번 출구
+            </div>
             <div className="text-xl text-gray_71">
               1번 출구로 나와서 더벤티 지나 우측 골목 이용 (도보 3분 거리)
             </div>
@@ -39,7 +53,9 @@ export default function ComePage() {
         <div className="border-b-2 border-lightGray lg:flex lg:py-8">
           <div className="text-4xl  lg:w-72">버스로 오실 경우</div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">광진구청 정류장(05148) 이용</div>
+            <div className="text-xl font-bold mb-1">
+              광진구청 정류장(05148) 이용
+            </div>
             <div className="text-xl text-gray_71">
               303, 2221, 2311, 3216, 3220
             </div>
@@ -48,7 +64,7 @@ export default function ComePage() {
         <div className="lg:flex lg:py-8">
           <div className="text-4xl  lg:w-72">자동차로 오실 경우</div>
           <div className="my-8 lg:my-0">
-            <div className="text-xl font-bold">자양로 18길 25</div>
+            <div className="text-xl font-bold mb-1">자양로 18길 25</div>
             <span className="text-xl text-gray_71">
               <span className="text-[#ff3838]">
                 전시장 주차가 불가능합니다.&nbsp;

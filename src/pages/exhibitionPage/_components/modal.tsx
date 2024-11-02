@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 flex items-start mt-[4.25rem] lg:items-center justify-center bg-white lg:bg-gray_71 lg:bg-opacity-70"
+      className="fixed inset-0 flex items-start mt-[4.2rem] lg:items-center justify-center bg-white lg:bg-gray_71 lg:bg-opacity-70"
     >
       {/* // 모달 내부 클릭시 이벤트 전파 방지 */}
       <div
@@ -86,7 +86,7 @@ const Modal: React.FC<ModalProps> = ({
               </div>
               <div className="text-xl">{image.name}</div>
             </div>
-            <div className="text-4xl my-4">{image.title}</div>
+            <div className="text-4xl my-4 font-bold">{image.title}</div>
             <div className="text-xl">{image.content}</div>
           </div>
         </div>
