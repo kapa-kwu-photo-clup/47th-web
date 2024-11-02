@@ -8,7 +8,6 @@ interface MapProps {
   link: string;
 }
 
-
 const Map: React.FC<MapProps> = ({
   center,
   zoom,
@@ -57,7 +56,7 @@ const Map: React.FC<MapProps> = ({
     }
   }, [center, zoom, address, buildingName, link]);
 
-  return <div id="map" className="w-full lg:h-[45rem] h-[22rem]" />;
+  return <div id="map" className="w-full lg:h-[37rem] h-64" />;
 };
 
 export default Map;
