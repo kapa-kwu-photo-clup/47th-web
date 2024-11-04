@@ -14,12 +14,7 @@ export default function ComePage() {
   return (
     <div className=" lg:w-3/4 lg:py-0 lg:px-0 px-5 mx-auto lg:mt-[4.5rem]">
       <div className="flex flex-col gap-4 mb-5">
-        <p
-          className="text-5xl font-bold lg:cursor-pointer"
-          onClick={handleNavigation}
-        >
-          레온 갤러리 구의
-        </p>
+        <p className="text-5xl font-bold lg:cursor-pointer">오시는 길</p>
         <Map
           center={{ lat: 37.5378952, lng: 127.0848809 }} // 초기 위치 지정
           zoom={17} // 초기 축적 50m
@@ -28,12 +23,25 @@ export default function ComePage() {
           link={link}
         />
         <div className="mt-16">
-          <p className="text-4xl">서울 광진구 자양로18길 25 지하1층</p>
-          <p className="text-xl text-gray_71 py-9">
-            회장 김성근 42기 T. 010-4848-0405
+          <p className="text-4xl">레온 갤러리 구의</p>
+          <p className="text-xl text-gray_71 pt-9 pb-2">
+            <span className="mr-2 text-black_22 font-bold">위치</span>
+            서울 광진구 자양로 18길 25 지하1층
+          </p>
+          <p className="text-xl text-gray_71 pb-2">
+            <span className="mr-2 text-black_22 font-bold">날짜</span>
+            11월 8일 ~ 11월 10일
+          </p>
+          <p className="text-xl text-gray_71 pb-2">
+            <span className="mr-2 text-black_22 font-bold">시간</span>
+            오전 10시 ~ 오후 6시
+          </p>
+          <p className="text-xl text-gray_71">
+            <span className="mr-2 text-black_22 font-bold">문의</span>
+            010-4848-0405 ( 회장 김성근 )
           </p>
           {/* line */}
-          <div className="bg-summerGreen_01 h-[0.125rem]"></div>
+          <div className="bg-summerGreen_01 h-[0.125rem] mt-[4rem]"></div>
         </div>
 
         <div className="border-b-2 border-lightGray lg:flex lg:py-8">
@@ -69,7 +77,7 @@ export default function ComePage() {
             </span>
             <span className="text-xl text-gray_71">
               자동차로 오실 경우 근처&nbsp;
-              <span className="lg:text-[#ff3838]">
+              <span className="text-[#ff3838]">
                 구의1동 공영주차장(서울 광진구 자양로18길 78)을
                 이용부탁드립니다. 30분 ₩1,200
               </span>
