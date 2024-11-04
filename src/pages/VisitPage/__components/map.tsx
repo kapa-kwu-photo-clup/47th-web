@@ -18,7 +18,7 @@ const Map: React.FC<MapProps> = ({
   useEffect(() => {
     if (typeof naver !== 'undefined' && naver.maps) {
       const map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(center.lat, center.lng),
+        center: new naver.maps.LatLng(center.lat, center.lng), // 지도의 초기 중심 좌표
         zoom: zoom,
       });
 
@@ -27,7 +27,7 @@ const Map: React.FC<MapProps> = ({
         map: map,
       });
 
-      // 정보창 생성
+      // 마커 클릭 시 나타날 정보창 스타일 지정
       const infoWindow = new naver.maps.InfoWindow({
         content: `
         <div class="text-center p-2 bg-white lg:cursor-pointer" id="infoWindowContent">
@@ -56,7 +56,7 @@ const Map: React.FC<MapProps> = ({
     }
   }, [center, zoom, address, buildingName, link]);
 
-  return <div id="map" className="w-full lg:h-[45rem] h-[22rem]" />;
+  return <div id="map" className="w-full lg:h-[37rem] h-64" />;
 };
 
 export default Map;

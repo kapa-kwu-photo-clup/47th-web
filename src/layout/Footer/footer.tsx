@@ -6,6 +6,26 @@ export default function Footer() {
           <p className="mx-auto text-center">
             ©2024. KAPA. All rights reserved.
           </p>
+          <div className="flex flex-row mx-auto justify-center">
+            <p>Produced by &nbsp;</p>
+            <button
+              className="hover:underline"
+              onClick={() =>
+                window.open('https://github.com/jamooooong', '_blank')
+              }
+            >
+              jamooooong
+            </button>
+            <p> &nbsp;and&nbsp; </p>
+            <button
+              className="hover:underline"
+              onClick={() =>
+                window.open('https://github.com/winnaba61', '_blank')
+              }
+            >
+              winA
+            </button>
+          </div>
         </div>
       </div>
     </footer>

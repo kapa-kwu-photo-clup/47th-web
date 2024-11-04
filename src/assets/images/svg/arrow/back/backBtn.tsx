@@ -1,3 +1,4 @@
+// 계절에 맞게 Back btn 반환하는 함수
 import back_btn from './back_btn_basic.svg';
 import back_btn_spring from './back_btn_spring.svg';
 import back_btn_summer from './back_btn_summer.svg';

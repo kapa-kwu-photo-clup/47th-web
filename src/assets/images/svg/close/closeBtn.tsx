@@ -1,3 +1,4 @@
+// 계절에 맞게 Close btn 반환하는 함수
 import close_btn from './close_btn_basic.svg';
 import close_btn_spring from './close_btn_spring.svg';
 import close_btn_summer from './close_btn_summer.svg';
