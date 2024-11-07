@@ -22,8 +22,8 @@ export default function Header() {
         'lg:border-b-4 lg:border-summerGreen_01 lg:text-black_22 text-summerGreen_01',
     },
     {
-      //to: '/exhibition/spring',
-      to: '/exhibition',
+      to: '/exhibition/spring',
+      //to: '/exhibition',
       label: 'EXHIBITION',
       color:
         'lg:border-b-4 lg:border-fallPurple lg:text-black_22 text-fallPurple',
