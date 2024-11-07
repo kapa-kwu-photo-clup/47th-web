@@ -24,7 +24,7 @@ export default function GoodsPage() {
               imgSrc={CalendarImg}
               goodsName="2025 미니 달력"
               goodsSubtitle="사계절을 담은 달력"
-              goodsPrice="5,000원"
+              goodsPrice="6,000원"
             />
           </div>
           <div className="lg:w-1/4 w-1/2 lg:mb-0 mb-11">
@@ -32,7 +32,7 @@ export default function GoodsPage() {
               imgSrc={KiringImg}
               goodsName="필름 키링"
               goodsSubtitle="달랑달랑 필름 키링"
-              goodsPrice="500원"
+              goodsPrice="1,000원"
             />
           </div>
           <div className="lg:w-1/4 w-1/2 lg:mb-0 mb-11">
