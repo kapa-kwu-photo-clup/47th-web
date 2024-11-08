@@ -295,8 +295,9 @@ export const pictureData: PictureData[] = [
     name: '홍자형',
     dept: '스포츠융합과학과',
     camera: 'Galaxy Note 20',
-    title: '구름에 잠식되는 짧은 시간 동안',
-    content: '관람차와 너무 잘 어울렸던 파스텔 빛의 겨울 구름을 담아보았다.',
+    title: '뉴욕의 스파이더맨 그 다리',
+    content:
+      '스파이더맨 영화에 나왔던 퀸스보로 브릿지. 루즈벨트 아일랜드로 넘어온 뒤, 맨해튼과 퀸스보로 브릿지의 겨울을 담았다',
     address:
       'https://www.kapaforever.site/webp/4겨울_41기_홍자형_스포츠융합과학과.webp',
   },
