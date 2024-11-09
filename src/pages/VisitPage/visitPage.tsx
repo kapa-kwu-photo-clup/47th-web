@@ -78,10 +78,9 @@ export default function ComePage() {
               <br />
             </span>
             <span className="text-xl text-gray_71">
-              자동차로 오실 경우 근처&nbsp;
+              자동차로 오실 경우 근처에 오셔서 &nbsp;
               <span className="text-[#ff3838]">
-                구의1동 공영주차장(서울 광진구 자양로18길 78)을
-                이용부탁드립니다. 30분 ₩1,200
+                회장에게 전화부탁드립니다.
               </span>
             </span>
           </div>
